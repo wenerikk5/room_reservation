@@ -1,4 +1,4 @@
-from pydantic import BaseSettings
+from pydantic import BaseSettings, EmailStr
 
 
 class Settings(BaseSettings):
@@ -6,6 +6,8 @@ class Settings(BaseSettings):
     description: str
     database_url: str
     secret: str = 'SECRET'
+    first_superuser_email: EmailStr | None = None
+    first_superuser_password: str | None = None
 
     class Config:
         env_file = '.env'

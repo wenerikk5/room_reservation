@@ -41,6 +41,7 @@ class ReservationCreate(ReservationUpdate):
 class ReservationDB(ReservationBase):
     id: int
     meetingroom_id: int
+    user_id: int | None
 
     class Config:
         orm_mode = True
